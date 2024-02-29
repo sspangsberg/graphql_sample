@@ -2,8 +2,8 @@ import { Product } from "./models/Product";
 
 export const resolvers = {
     Query: {     
-        products: () => Product.find(),
-        product: (parent, args, context, info) => { return Product.findById(args.id); }        
+        products: async () => await Product.find(),
+        product: async (parent, args, context, info) => { return await Product.findById(args.id); }        
     },
     Mutation: {        
         createProduct: async (_, { name, description, price, inStock }) => {

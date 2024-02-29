@@ -18,7 +18,7 @@ const startServer = async () => {
 
     server.applyMiddleware({ app });
 
-    await mongoose.connect(process.env.DBHOST, {useNewUrlParser: true, useUnifiedTopology: true});
+    await mongoose.connect(process.env.DBHOST, {});
     
     app.listen({ port: 4000}, () =>
         console.log(`Server ready at http://localhost:4000${ server.graphqlPath }`)
