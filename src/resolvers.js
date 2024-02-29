@@ -16,7 +16,7 @@ export const resolvers = {
             return "Update Success";
         },
         deleteProduct: async (_, { id }) => {            
-            await Product.findByIdAndRemove(id);            
+            await Product.findOneAndDelete(id);            
             return "Delete Success";
         }
     }
